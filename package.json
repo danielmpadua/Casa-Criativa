@@ -1,0 +1,25 @@
+{
+  "name": "Casa-Criativa",
+  "version": "1.0.0",
+  "description": "Aplicação Web desenvolvida durante o Workshop oferecido pela RocketSeat",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielmpadua/Casa-Criativa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielmpadua/Casa-Criativa/issues"
+  },
+  "homepage": "https://github.com/danielmpadua/Casa-Criativa#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}
