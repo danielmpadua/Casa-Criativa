@@ -1,158 +1,35 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
+{% extends "layout.html" %}
+
+{% set bodyID = "page-ideias" %}
+
+{% block title %}
     <title>Ideias - Casa Criativa</title>
+{% endblock %}
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700,900&display=swap" rel="stylesheet">
-
-</head>
-<body id="page-ideias">
-        
-    <div id="container">
-        <header>
-            <a href="/">
-                <img src="/logo.png" alt="Imagem da Logomarca">
-            </a>
-            
-            <nav>
-                <li><a href="/">Início</a></li>
-                <li><a class="button" href="#" onclick="onOff()">Nova Ideia</a></li>
-            </nav>
-        </header>
-
-        <section id="title">
-            <p>em exibição</p>
-            <h1>Ideias</h1>
-        </section>
-
-        <main>
-            <section id="ideas">
-                <div class="idea">
-                    <img 
-                        src="https://image.flaticon.com/icons/svg/2729/2729007.svg"
-                        alt="Imagem Curso de Programação">
-                    
-                    <div class="content">
-                        <h3>
-                            Cursos de Programação
-                        </h3>
-                        <p>
-                            Estudo
-                        </p>
-                        <div class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quae iusto eligendi similique omnis corporis perspiciatis a sunt molestiae magni obcaecati ipsa non fuga tempora, sed pariatur ab saepe?
-                        </div>
-                        <a href="#">Ir para a ideia</a>
-                    </div>
-                </div>
-                
-                <div class="idea">
-                    <img 
-                        src="https://image.flaticon.com/icons/svg/2729/2729069.svg"
-                        alt="Imagem Exercícios">
-                    
-                    <div class="content">
-                        <h3>
-                            Exercícios
-                        </h3>
-                        <p>
-                            Saúde
-                        </p>
-                        <div class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quae iusto eligendi similique omnis corporis perspiciatis a sunt molestiae magni obcaecati ipsa non fuga tempora, sed pariatur ab saepe?
-                        </div>
-                        <a href="#">Ir para a ideia</a>
-                    </div>
-                </div>
-
-                <div class="idea">
-                    <img 
-                        src="https://image.flaticon.com/icons/svg/2729/2729027.svg"
-                        alt="Imagem Meditação">
-                    
-                    <div class="content">
-                        <h3>
-                            Meditação
-                        </h3>
-                        <p>
-                            Mentalidade
-                        </p>
-                        <div class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quae iusto eligendi similique omnis corporis perspiciatis a sunt molestiae magni obcaecati ipsa non fuga tempora, sed pariatur ab saepe?
-                        </div>
-                        <a href="#">Ir para a ideia</a>
-                    </div>
-                </div>
-
-                <div class="idea">
-                    <img 
-                        src="https://image.flaticon.com/icons/svg/2729/2729027.svg"
-                        alt="Imagem Meditação">
-                    
-                    <div class="content">
-                        <h3>
-                            Meditação
-                        </h3>
-                        <p>
-                            Mentalidade
-                        </p>
-                        <div class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam vel quae iusto eligendi similique omnis corporis perspiciatis a sunt molestiae magni obcaecati ipsa non fuga tempora, sed pariatur ab saepe?
-                        </div>
-                        <a href="#">Ir para a ideia</a>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer> 
-            Com ❤️ <a href="https://github.com/danielmpadua" target="_blank">Daniel Pádua</a>
-        </footer>
-
-    </div>
-
-    <div id="modal" class="hide">
-        <div class="content">
-            
-            <h1>Nova Ideia</h1>
-            
-            <form action="">
-                
-                <div class="input-wrapper">
-                    <label for="title">Título da ideia</label>
-                    <input type="text" name= "title">
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="category">Categoria</label>
-                    <input type="text" name= "category">
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="image">Link da imagem</label>
-                    <input type="url" name= "image">
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="description">Digite uma descrição para essa ideia</label>
-                    <textarea name="description" cols="30" rows="10"></textarea>    
-                </div>
-
-                <div class="input-wrapper">
-                    <label for="link">Link da ideia</label>
-                    <input type="url" name= "link">  
-                </div>  
-                
-                <a href="#" onclick="onOff()">Voltar</a>
-                <button>Salvar</button>
-
-            </form>
-
-        </div>
-    </div>
+{% block content %}
+<header>
+    <a href="/">
+        <img src="/logo.png" alt="Imagem da Logomarca">
+    </a>
     
-    <script src="/scripts.js"></script>
-</body>
-</html>
+    <nav>
+        <li><a href="/">Início</a></li>
+        <li><a class="button" href="#" onclick="onOff()">Nova Ideia</a></li>
+    </nav>
+</header>
+
+<section id="title">
+    <p>em exibição</p>
+    <h1>Ideias</h1>
+</section>
+
+<main>
+    <section id="ideas">
+        {% include "allIdeias.html" %}
+    </section>
+</main>
+
+<footer> 
+    Com ❤️ <a href="https://github.com/danielmpadua" target="_blank">Daniel Pádua</a>
+</footer>
+{% endblock %}
